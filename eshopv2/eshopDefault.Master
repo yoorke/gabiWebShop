@@ -1,0 +1,249 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="eshopDefault.master.cs" Inherits="eshopv2.eshopDefault" %>
+<%@ Register Src="user_controls/MainMenuVertical.ascx" TagName="MainMenuVertical" TagPrefix="mainMenuVertical" %>
+
+<!DOCTYPE html>
+
+<html lang="sr">
+<head runat="server">
+    <title>WebShop</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" type="image/x-icon" href="<%#ResolveUrl("~/favicon.ico") %>" />
+    <link href="<%# ResolveUrl("~/css/style.min.css") %>" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="<%# ResolveUrl("~/css/font-awesome.min.css") %>" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 pull-right text-right">
+                        <asp:LoginView ID="loginView1" runat="server">
+                            <AnonymousTemplate>
+                                <asp:HyperLink ID="lnkLogin" runat="server" Text="Prijava"></asp:HyperLink> / <asp:HyperLink ID="lnkCreateUser" runat="server" Text="Registracija"></asp:HyperLink>
+                            </AnonymousTemplate>
+                            <LoggedInTemplate>
+                                <span class="margin-right-05">Dobrodošli, <asp:Label ID="lblUsername" runat="server"></asp:Label></span>
+                                <asp:LinkButton ID="btnLogout" runat="server" Text="Odjavite se" OnClick="btnLogout_Click" CausesValidation="false"></asp:LinkButton>
+                            </LoggedInTemplate>
+                        </asp:LoginView>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="header" class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="<%=ResolveUrl("~/images/logo.jpg") %>" class="img-responsive" />
+                </div>
+                <div class="col-md-6">
+                    <div id="search">
+                        <asp:Panel DefaultButton="btnSearch" runat="server">
+                            <div class="input-group input-append">
+                                <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" placeholder="Pretraga proizvoda"></asp:TextBox>
+                                <span class="input-group-btn">
+                                    <%--<button class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>--%>
+                                    <asp:LinkButton ID="btnSearch" runat="server" OnClick="btnSearch_Click" CssClass="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-search"></span></asp:LinkButton>
+                                </span>
+                            </div>
+                        </asp:Panel>
+                    </div><!--search-->
+                </div>
+                <div class="col-md-3">
+                    <div id="cartFP">
+                        <a href="<%=Page.ResolveUrl("~/korpa") %>" id="cartIcon" class="glyphicon glyphicon-shopping-cart"></a>
+                        (<asp:Label ID="lblProductCount" runat="server"></asp:Label>)<span class="hidden-sm"> - </span>
+                        <asp:Label ID="lblCartPrice" runat="server"></asp:Label><small> din</small>
+                        <div id="cartFPWindow" style="display:none">
+                            <span id="cartFPClose" class="glyphicon glyphicon-remove"></span>
+                            <div class="cartItems">
+                                <span class="cartHeading">Sadržaj korpe</span>
+                                <table id="dgvCartItems" class="">
+                                </table>
+                            </div>
+                            <div class="cartTotal text-right">
+                                <span>Ukupno: </span>
+                                <span class="cartFpTotal"></span>
+                            </div>
+                            <div class="cartLinks">
+                                <a href="/korpa">Korpa</a>
+                                <a href="/porucivanje" class="pull-right">Poruči</a>
+                            </div>
+                        </div>
+                    </div><!--cartFP-->
+                </div>
+            </div>
+        </div>
+
+        <div id="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 padding-left-0">
+                        <mainMenuVertical:MainMenuVertical ID="mainMenuVertical" runat="server" Visible="true" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+            <div class="container content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div class="container">
+                <div class="row footer-top">
+                    <div class="col-sm-3">
+                        <h4>Proizvodi</h4>
+                        <%--<asp:Repeater ID="rptCategories" runat="server">
+                            <HeaderTemplate><ul></HeaderTemplate>
+                            <ItemTemplate>
+                                <li><asp:HyperLink ID="lnkCategory" runat="server" NavigateUrl='<%# Eval("url") %>' Text='<%# Eval("name") %>'></asp:HyperLink></li>
+                            </ItemTemplate>
+                            <FooterTemplate></ul></FooterTemplate>
+                        </asp:Repeater>--%>
+                    </div>
+                    <div class="col-sm-3">
+                        <h4>Informacije</h4>
+                        <asp:Repeater ID="rptFt1" runat="server">
+                            <HeaderTemplate><ul></HeaderTemplate>
+                            <ItemTemplate>
+                                <li><asp:HyperLink ID="lnkCustomPage" runat="server" NavigateUrl='<%# ResolveUrl("~/" + Eval("url")) %>' Text='<%#Eval("title") %>'></asp:HyperLink></li>
+                            </ItemTemplate>
+                            <FooterTemplate>
+                                <li><a href="/kontakt">Kontaktirajte nas</a></li>
+                                </ul>
+                            </FooterTemplate>
+                        </asp:Repeater>
+                        <h4 class="margin-top-2">Ponude</h4>
+                        <ul>
+                            <li><a href="#">Outlet - uvek niske cene</a></li>
+                            <li><a href="#">Akcije - privremeno snižene cene</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <h4>Kupovina</h4>
+                        <asp:Repeater ID="rptFt2" runat="server">
+                            <HeaderTemplate><ul></HeaderTemplate>
+                            <ItemTemplate>
+                                <li><asp:HyperLink ID="lnkCustomPage" runat="server" NavigateUrl='<%# ResolveUrl("~/" + Eval("url")) %>' Text='<%#Eval("title") %>'></asp:HyperLink></li>
+                            </ItemTemplate>
+                            <FooterTemplate></ul></FooterTemplate>
+                        </asp:Repeater>
+
+                        <h4>Poslovanje</h4>
+                        <asp:Repeater ID="rptFt3" runat="server">
+                            <HeaderTemplate><ul></HeaderTemplate>
+                            <ItemTemplate>
+                                <li><asp:HyperLink ID="lnkCustomPage" runat="server" NavigateUrl='<%# ResolveUrl("~/" + Eval("url")) %>' Text='<%#Eval("title") %>'></asp:HyperLink></li>
+                            </ItemTemplate>
+                            <FooterTemplate></ul></FooterTemplate>
+                        </asp:Repeater>
+                    </div><!--col-->
+                    <div class="col-sm-3 footer-right">
+                        <div class="phone">
+                            <img src="/images/phone.png" class="img-responsive phone" />
+                            <span class="phone">060 000 000</span>
+                            <span class="city"><small>WebShop</small></span>
+                        </div>
+                        <div class="workingHours">
+                            <p>Radno vreme online prodavnice</p>
+                            <p>Podeneljak - Subota: 08:00 - 20:00</p>
+                            <p>Nedeljom ne radimo</p>
+                        </div>
+                        <a href="http://www.facebook.com" target="_blank"><img src="<%= ResolveUrl("~/images/Facebook_New_Logo_(2015).svg.png")  %>" class="img-responsive" /></a>
+                    </div><!--col-->
+                </div>
+                <div class="row footer-bottom">
+                    <div class="col-lg-10">
+                        <div class="wrapper">
+                            <p>Cene na sajtu su izražene u dinarima sa uračuatim porezom i plaćanje se vrši isključivo u dinarima.
+                            Nastojimo da budemo što precizniji u opisu proizvoda, prikazu slika i samih cena, ali ne možemo garantovati da su sve informacije kompletne i bez grešaka.
+                            Svi artikli prikazani na sajtu su deo naše ponude i ne podrazumeva se da su dostupni u svakom trenutku.</p>
+                        </div>
+                    </div><!--col-->
+                    <div class="col-lg-2 text-right footer-bottom-right">
+                        <span>2015 Str Stil. Sva prava zadržana.</span>
+                        
+                    </div><!--col-->
+                </div><!--row-->
+            </div>
+        </div>
+
+
+
+        <div id="messageBoxCompare" class="messageBoxWrapper" style="display:none">
+        <div class="messageBox">
+            <span>Proizvod dodat u listu za poređenje</span>
+            <span id="messageBoxCompareText"></span>
+            <div>
+                <button type="button" id="messageBoxCompareBtnClose" onclick="messageBoxCompareBtnClose_Click()" class="btn btn-primary">Zatvori</button>
+                <button type="button" id="messageBoxCompareBtnCompare" onclick="messageBoxCompareBtnCompare_Click()" class="btn btn-primary">Uporedi</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="cartMessageBox" class="messageBoxWrapper" style="display:none" onclick="$('#cartMessageBox').hide()">
+        <div class="messageBox">
+            <span>Proizvod dodat u korpu</span>
+            <div>
+                <button type="button" id="cartMessageBoxBtnClose" onclick="cartMessageBoxBtnClose_Click()" class="btn btn-primary">Nastavi</button>
+                <button type="button" id="cartMessageBoxBtnCart" onclick="cartMessageBoxBtnCart_Click()" class="btn btn-primary">Korpa</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="mainMenuVerticalBackground" class="mainMenuVerticalBackground" style="display:none"></div>
+
+
+    </form>
+
+    <script src="<%=ResolveUrl("~/js/jquery-1.11.3.min.js") %>"></script>
+    <script src="<%=ResolveUrl("~/js/bootstrap.min.js") %>"></script>
+    <script src="<%=ResolveUrl("~/js/common.js") %>"></script>
+    <script src="<%=ResolveUrl("~/js/product.js") %>"></script>
+    <script src="<%=ResolveUrl("~/js/modernizr.js") %>"></script>
+    <script src="<%=ResolveUrl("~/js/jquery.menu-aim.js") %>"></script>
+    <script src="<%=ResolveUrl("~/js/main.js") %>"></script>
+    <script src="<%=ResolveUrl("~/js/jquery.tmpl.min.js") %>"></script>
+    <%--<script src="<%=ResolveUrl("~/js/bundle.min.js") %>"></script>--%>
+    <script id="dgvCartItemsTemplate" type="text/x-jquery-tmpl">
+        <tr>
+            <%--<td><img src="${imageUrl.substring(0, imageUrl.indexOf('.jpg')) + '-small.jpg'}" /></td>--%>
+            <td>${name}</td>
+            <%--<td>${parseFloat(productPrice).toFixed(2)}</td>--%>
+            <td>${parseFloat(userPrice).toFixed(2)}</td>
+            <td>${parseFloat(quantity).toFixed(2)}</td>
+        </tr>
+    </script>
+    <script src="<%=ResolveUrl("~/js/cart_fp.js") %>"></script>
+
+    <script>
+        $('.cd-dropdown-trigger').click(function () {
+            if ($('#mainMenuVerticalBackground')[0].style["display"] == "none")
+                $('#mainMenuVerticalBackground').show();
+            else
+                $('#mainMenuVerticalBackground').hide();
+        })
+        $('.cd-dropdown .cd-close').click(function () {
+            $('#mainMenuVerticalBackground').hide();
+        })
+
+        
+    </script>
+    
+
+    <asp:ContentPlaceHolder ID="footerContentPlaceHolder" runat="server">
+
+    </asp:ContentPlaceHolder>
+</body>
+</html>

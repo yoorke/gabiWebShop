@@ -1,0 +1,78 @@
+﻿#footer{
+    color:@footer-text-color;
+    padding:0;
+}
+
+#footer ul{
+    list-style-type:none;
+    padding-left:1em;
+}
+
+#footer a{
+    color:@footer-link-color;
+}
+
+#footer a:hover{
+
+}
+
+.footer-top{
+    background-color:@footer-background-color;
+    border-top:3px solid #ff3b3f;
+    background:linear-gradient(to bottom right, #666, #444);
+}
+
+.footer-top .footer-right{
+    padding:1em 2em;
+    padding-bottom:2em;
+}
+
+@media only screen and (min-width:768px){
+    .footer-top .footer-right{
+        background:url('../images/footer-border.jpg') left top no-repeat;
+        background-size:contain;
+    }
+}
+
+.footer-top .footer-right div.phone{
+    padding:0.5em;
+    overflow:auto;
+}
+
+.footer-top .footer-right img.phone{
+    max-width:50px;
+    float:left;
+    display:inline-block;
+}
+
+.footer-top .footer-right span.phone{
+    font-size:1.5em;
+    font-weight:bold;
+    display:inline-block;
+    margin-left:0.5em;
+    margin-top:0.2em;
+}
+
+.footer-top .footer-right span.city{
+    margin-left:0.5em;
+    display:block;
+}
+
+.footer-top .footer-right .workingHours{
+    margin-top:1em;
+    margin-bottom:1em;
+}
+
+.footer-top .footer-right .workingHours p{
+    margin:0;
+    font-size:0.9em;
+}
+
+.footer-bottom{
+    background-color:#222;
+    text-align:left;
+    border-top:2px solid #ff3b3f;
+    color:#eee;
+    font-size:0.8em;
+    padding:0.5em 0;
+}

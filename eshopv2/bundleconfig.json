@@ -1,0 +1,15 @@
+[
+  {
+    "outputFileName": "js/bundle.js",
+    "inputFiles": [
+      "js/jquery-1.11.3.min.js",
+      "js/bootstrap.min.js",
+      "js/common.js",
+      "js/product.js",
+      "js/modernizr.js",
+      "js/jquery.menu-aim.js",
+      "js/main.js",
+      "js/jquery.tmpl.min.js"
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+﻿[
+  {
+    "outputFile": "css/style.css",
+    "inputFile": "less/style.less",
+    "options": { "relativeUrls": false}
+  },
+  {
+    "outputFile": "js/product.es5.js",
+    "inputFile": "js/product.js"
+  }
+]
