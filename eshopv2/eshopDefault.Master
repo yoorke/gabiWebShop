@@ -39,8 +39,10 @@
 
         <div id="header" class="container">
             <div class="row">
-                <div class="col-md-3">
-                    <img src="<%=ResolveUrl("~/images/logo.jpg") %>" class="img-responsive" />
+                <div class="col-md-3 logo">
+                    <asp:HyperLink runat="server" NavigateUrl="~/">
+                        <img src="<%=ResolveUrl("~/images/logo.jpg") %>" class="img-responsive" />
+                    </asp:HyperLink>
                 </div>
                 <div class="col-md-6">
                     <div id="search">
@@ -72,8 +74,8 @@
                                 <span class="cartFpTotal"></span>
                             </div>
                             <div class="cartLinks">
-                                <a href="/korpa">Korpa</a>
-                                <a href="/porucivanje" class="pull-right">Poruči</a>
+                                <a href="/korpa" class="btn btn-primary button">Korpa</a>
+                                <a href="/porucivanje" class="pull-right btn btn-primary button">Poruči</a>
                             </div>
                         </div>
                     </div><!--cartFP-->
@@ -82,7 +84,7 @@
         </div>
 
         <div id="main-menu">
-            <div class="container">
+            <div class="container main-menu">
                 <div class="row">
                     <div class="col-lg-3 padding-left-0">
                         <mainMenuVertical:MainMenuVertical ID="mainMenuVertical" runat="server" Visible="true" />
@@ -151,16 +153,17 @@
                     </div><!--col-->
                     <div class="col-sm-3 footer-right">
                         <div class="phone">
-                            <img src="/images/phone.png" class="img-responsive phone" />
-                            <span class="phone">060 000 000</span>
-                            <span class="city"><small>WebShop</small></span>
+                            <%--<img src="/images/phone.png" class="img-responsive phone" />--%>
+                            <span class="phone">023 581 810</span>
+                            <span class="city"><small>Gabi WebShop</small></span>
                         </div>
                         <div class="workingHours">
-                            <p>Radno vreme online prodavnice</p>
-                            <p>Podeneljak - Subota: 08:00 - 20:00</p>
+                            <p>Radno vreme prodavnice</p>
+                            <p>Ponedeljak - Petak: 08:00 - 19:00</p>
+                            <p>Subota: 08:00 - 14:00</p>
                             <p>Nedeljom ne radimo</p>
                         </div>
-                        <a href="http://www.facebook.com" target="_blank"><img src="<%= ResolveUrl("~/images/Facebook_New_Logo_(2015).svg.png")  %>" class="img-responsive" /></a>
+                        <%--<a href="http://www.facebook.com" target="_blank"><img src="<%= ResolveUrl("~/images/Facebook_New_Logo_(2015).svg.png")  %>" class="img-responsive" /></a>--%>
                     </div><!--col-->
                 </div>
                 <div class="row footer-bottom">
@@ -196,7 +199,7 @@
         <div class="messageBox">
             <span>Proizvod dodat u korpu</span>
             <div>
-                <button type="button" id="cartMessageBoxBtnClose" onclick="cartMessageBoxBtnClose_Click()" class="btn btn-primary">Nastavi</button>
+                <button type="button" id="cartMessageBoxBtnClose" onclick="cartMessageBoxBtnClose_Click()" class="btn btn-primary button">Nastavi</button>
                 <button type="button" id="cartMessageBoxBtnCart" onclick="cartMessageBoxBtnCart_Click()" class="btn btn-primary">Korpa</button>
             </div>
         </div>

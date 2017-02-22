@@ -200,7 +200,7 @@ namespace eshopv2
             cmbPriceTo.Items.Add("-");
 
             double[] prices = new ProductBL().GetMinMaxPrice(categoryUrl, includeChildrenCategories);
-            for (int i = (int)prices[0]; i < (int)prices[1]; i += (int)(prices[1] - prices[0]) / 10)
+            for (int i = (int)prices[0]; i <= (int)prices[1]; i += (int)(prices[1] - prices[0]) / 10 > 1 ? (int)(prices[1] - prices[0]) / 10 : 1)
             {
                 cmbPriceFrom.Items.Add(string.Format("{0:N2}", i));
                 cmbPriceTo.Items.Add(string.Format("{0:N2}", i));
