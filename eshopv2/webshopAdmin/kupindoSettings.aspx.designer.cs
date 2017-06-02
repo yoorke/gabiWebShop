@@ -7,189 +7,144 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace eshopv2.user_controls {
+namespace WebShopAdmin.webshopAdmin {
     
     
-    public partial class product_fp {
+    public partial class kupindoSettings {
         
         /// <summary>
-        /// btnDeleteFromWishList control.
+        /// btnSave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnDeleteFromWishList;
+        protected global::System.Web.UI.WebControls.Button btnSave;
         
         /// <summary>
-        /// lnkEditProduct control.
+        /// chkLimundoCash control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkEditProduct;
+        protected global::System.Web.UI.WebControls.CheckBox chkLimundoCash;
         
         /// <summary>
-        /// lnkPhoto control.
+        /// chkSlanjePosleUplate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkPhoto;
+        protected global::System.Web.UI.WebControls.CheckBox chkSlanjePosleUplate;
         
         /// <summary>
-        /// imgPhoto control.
+        /// chkSlanjePreUplate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgPhoto;
+        protected global::System.Web.UI.WebControls.CheckBox chkSlanjePreUplate;
         
         /// <summary>
-        /// lblBrand control.
+        /// chkSlanjePouzecem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBrand;
+        protected global::System.Web.UI.WebControls.CheckBox chkSlanjePouzecem;
         
         /// <summary>
-        /// lblName control.
+        /// chkLicnoPreuzimanje control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lblName;
+        protected global::System.Web.UI.WebControls.CheckBox chkLicnoPreuzimanje;
         
         /// <summary>
-        /// lblDescription control.
+        /// chkPosta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescription;
+        protected global::System.Web.UI.WebControls.CheckBox chkPosta;
         
         /// <summary>
-        /// imgPromotion control.
+        /// chkAks control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgPromotion;
+        protected global::System.Web.UI.WebControls.CheckBox chkAks;
         
         /// <summary>
-        /// price_div control.
+        /// chkCityExpress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl price_div;
+        protected global::System.Web.UI.WebControls.CheckBox chkCityExpress;
         
         /// <summary>
-        /// lblPrice control.
+        /// chkPostExpress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPrice;
+        protected global::System.Web.UI.WebControls.CheckBox chkPostExpress;
         
         /// <summary>
-        /// webprice_div control.
+        /// chkDailyExpress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl webprice_div;
+        protected global::System.Web.UI.WebControls.CheckBox chkDailyExpress;
         
         /// <summary>
-        /// lblWebPrice control.
+        /// chkBex control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblWebPrice;
+        protected global::System.Web.UI.WebControls.CheckBox chkBex;
         
         /// <summary>
-        /// saving_div control.
+        /// chkOrganizovaniTransport control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl saving_div;
+        protected global::System.Web.UI.WebControls.CheckBox chkOrganizovaniTransport;
         
         /// <summary>
-        /// lblSaving control.
+        /// txtDefaultLager control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSaving;
+        protected global::System.Web.UI.WebControls.TextBox txtDefaultLager;
         
         /// <summary>
-        /// divButtons control.
+        /// txtKupindoAccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divButtons;
-        
-        /// <summary>
-        /// btnCart control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btnCart;
-        
-        /// <summary>
-        /// txtTooltip control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtTooltip;
-        
-        /// <summary>
-        /// btnDetails control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnDetails;
-        
-        /// <summary>
-        /// lblDetails control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lblDetails;
-        
-        /// <summary>
-        /// lblProductID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField lblProductID;
+        protected global::System.Web.UI.WebControls.TextBox txtKupindoAccess;
     }
 }

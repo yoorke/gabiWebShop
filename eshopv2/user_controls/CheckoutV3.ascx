@@ -277,7 +277,7 @@
                                                         <div id="showShop" class="margin-top-2" runat="server" style="display:none">
                                                             <span>Odaberite radnju:</span>
                                                             <select id="cmbShop" class="form-control">
-                                                                <option>Pin Servis, Pupinova 16, 23000 Zrenjanin</option>
+                                                                <option>Gabi - boje i lakovi, Hunjadi Janoša 33, 23206 Mužlja</option>
                                                             </select>
                                                         </div>
                                                     </div>

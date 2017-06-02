@@ -166,6 +166,24 @@ namespace eshopv2 {
         protected global::System.Web.UI.WebControls.Button btnCart;
         
         /// <summary>
+        /// btnCartAjax control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnCartAjax;
+        
+        /// <summary>
+        /// txtTooltip control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtTooltip;
+        
+        /// <summary>
         /// btnCompare control.
         /// </summary>
         /// <remarks>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/eshopDefault.Master" AutoEventWireup="true" CodeBehind="wishList.aspx.cs" Inherits="eshopv2.wishList" Title="Lista želja | Milupino" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/eshopDefault.Master" AutoEventWireup="true" CodeBehind="wishList.aspx.cs" Inherits="eshopv2.wishList" Title="Lista želja | Gabi - boje i lakovi" %>
 <%@ Register Src="user_controls/Banner.ascx" TagName="Banner" TagPrefix="banner" %>
 <%@ Register Src="user_controls/product_fp.ascx" TagName="ProductFP" TagPrefix="product_fp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

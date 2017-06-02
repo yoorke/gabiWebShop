@@ -5,7 +5,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Upoređivanje proizvoda | Milupino</title>
+    <title>Upoređivanje proizvoda | Gabi - boje i lakovi</title>
     <link href="<%=ResolveUrl("~/css/bootstrap.min.css") %>" rel="Stylesheet" />
     <link href="<%=ResolveUrl("~/css/StyleV2.css") %>" rel="Stylesheet" />
     <link rel="Stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" />

@@ -78,8 +78,12 @@ namespace eshopv2.user_controls
                 imgPromotion.Visible = (_product.Promotion.ImageUrl != string.Empty) ? true : false;
 
                 //price_div.Visible = true;
-                price_div.Style.Add("display", "block");
-                saving_div.Visible = true;
+                if(_product.Promotion.Value > 0)
+                { 
+                    price_div.Style.Add("display", "block");
+                    saving_div.Visible = true;
+                    
+                }
                 lblWebPrice.Attributes["class"] = "web_price color-red";
             }
             else
@@ -99,6 +103,20 @@ namespace eshopv2.user_controls
                 price_div.Visible = false;
                 webprice_div.Visible = false;
                 saving_div.Visible = false;
+            }
+
+            btnCart.Attributes.Add("onclick", "AddToCart('" + lblProductID.ClientID + "')");
+            if (!_product.IsInStock)
+            {
+                btnCart.Attributes.Add("class", "btn_cart notInStock tooltipwrapper");
+                txtTooltip.InnerText = "NEMA NA STANJU";
+                txtTooltip.Attributes.Add("class", "tooltiptext font-06em");
+
+                if(!bool.Parse(ConfigurationManager.AppSettings["allowOrderIfNotInStock"]))
+                {
+                    btnCart.Attributes.Add("onclick", "");
+                    btnCart.Attributes.Add("class", btnCart.Attributes["class"] + " cursor-default");
+                }
             }
         }
 

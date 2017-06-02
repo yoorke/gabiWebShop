@@ -137,6 +137,9 @@
     </Content>
     <Content Include="Default.old.aspx" />
     <Content Include="default.aspx" />
+    <Content Include="error.min.html">
+      <DependentUpon>error.html</DependentUpon>
+    </Content>
     <Content Include="js\bundle.js" />
     <Content Include="js\bundle.min.js">
       <DependentUpon>bundle.js</DependentUpon>

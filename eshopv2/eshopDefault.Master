@@ -5,7 +5,7 @@
 
 <html lang="sr">
 <head runat="server">
-    <title>WebShop</title>
+    <title>Gabi - boje i lakovi</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,6 +13,17 @@
     <link rel="icon" type="image/x-icon" href="<%#ResolveUrl("~/favicon.ico") %>" />
     <link href="<%# ResolveUrl("~/css/style.min.css") %>" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="<%# ResolveUrl("~/css/font-awesome.min.css") %>" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-96929121-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -105,7 +116,7 @@
             <div class="container">
                 <div class="row footer-top">
                     <div class="col-sm-3">
-                        <h4>Proizvodi</h4>
+                        <%--<h4>Proizvodi</h4>--%>
                         <%--<asp:Repeater ID="rptCategories" runat="server">
                             <HeaderTemplate><ul></HeaderTemplate>
                             <ItemTemplate>
@@ -113,6 +124,9 @@
                             </ItemTemplate>
                             <FooterTemplate></ul></FooterTemplate>
                         </asp:Repeater>--%>
+                        <a href="/gde-kupiti">
+                            <img class="img-responsive margin-top-2 margin-bottom-2" src="/images/map.jpg" />
+                        </a>
                     </div>
                     <div class="col-sm-3">
                         <h4>Informacije</h4>
@@ -128,7 +142,7 @@
                         </asp:Repeater>
                         <h4 class="margin-top-2">Ponude</h4>
                         <ul>
-                            <li><a href="#">Outlet - uvek niske cene</a></li>
+                            <%--<li><a href="#">Outlet - uvek niske cene</a></li>--%>
                             <li><a href="#">Akcije - privremeno snižene cene</a></li>
                         </ul>
                     </div>
@@ -169,13 +183,13 @@
                 <div class="row footer-bottom">
                     <div class="col-lg-10">
                         <div class="wrapper">
-                            <p>Cene na sajtu su izražene u dinarima sa uračuatim porezom i plaćanje se vrši isključivo u dinarima.
+                            <p>Cene na sajtu su izražene u dinarima sa uračunatim porezom i plaćanje se vrši isključivo u dinarima.
                             Nastojimo da budemo što precizniji u opisu proizvoda, prikazu slika i samih cena, ali ne možemo garantovati da su sve informacije kompletne i bez grešaka.
                             Svi artikli prikazani na sajtu su deo naše ponude i ne podrazumeva se da su dostupni u svakom trenutku.</p>
                         </div>
                     </div><!--col-->
                     <div class="col-lg-2 text-right footer-bottom-right">
-                        <span>2015 Str Stil. Sva prava zadržana.</span>
+                        <span>2017. Gabi doo. Sva prava zadržana.</span>
                         
                     </div><!--col-->
                 </div><!--row-->
@@ -200,7 +214,7 @@
             <span>Proizvod dodat u korpu</span>
             <div>
                 <button type="button" id="cartMessageBoxBtnClose" onclick="cartMessageBoxBtnClose_Click()" class="btn btn-primary button">Nastavi</button>
-                <button type="button" id="cartMessageBoxBtnCart" onclick="cartMessageBoxBtnCart_Click()" class="btn btn-primary">Korpa</button>
+                <button type="button" id="cartMessageBoxBtnCart" onclick="cartMessageBoxBtnCart_Click()" class="btn btn-primary button">Korpa</button>
             </div>
         </div>
     </div>

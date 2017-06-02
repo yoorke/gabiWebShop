@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/eshopDefault.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="eshopv2.login" Title="Prijava | Milupino" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/eshopDefault.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="eshopv2.login" Title="Prijava | Gabi - boje i lakovi" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <asp:Literal ID="canonicalUrl" runat="server"></asp:Literal>
     <link rel="stylesheet" type="text/css" href="<%=ResolveUrl("~/css/mainMenuVertical.css") %>" />

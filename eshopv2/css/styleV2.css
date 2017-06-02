@@ -1742,3 +1742,30 @@ table.orderItems {
 .thumbsImages input:hover{
     border:1px solid #cccccc !important;
 }
+
+.notInStock{
+    background-color:#aaa !important;
+}
+
+.tooltipwrapper{
+    position:relative;
+    display:inline-block;
+}
+
+.tooltipwrapper:hover .tooltiptext{
+    visibility:visible;
+}
+
+.tooltiptext{
+    visibility:hidden;
+    background-color:#ff3b3f;
+    color:#fff;
+    text-align:center;
+    padding:5px;
+    bottom:110%;
+    left:-10%;
+    position:absolute;
+    width:120%;
+    border:1px solid #b72a2d;
+    animation: fadein 0.2s;
+}

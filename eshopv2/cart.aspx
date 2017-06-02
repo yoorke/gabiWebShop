@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/eshopDefault.Master" AutoEventWireup="true" CodeBehind="cart.aspx.cs" Inherits="eshopv2.cart" Title="Korpa | Milupino" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/eshopDefault.Master" AutoEventWireup="true" CodeBehind="cart.aspx.cs" Inherits="eshopv2.cart" Title="Korpa | Gabi - boje i lakovi" %>
 <%@Register Src="user_controls/Cart.ascx" TagName="Cart" TagPrefix="Cart" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <asp:Literal ID="canonicalUrl" runat="server"></asp:Literal>

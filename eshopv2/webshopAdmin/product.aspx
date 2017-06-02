@@ -440,7 +440,7 @@
         lblAttributeID.value = hidden.value;
         var attributeName = document.getElementById('<%=lblAttributeName.ClientID %>');
         //alert(attributeName);
-        attributeName.value = id.toString().substring(26, 39);
+        attributeName.value = id.toString().substring(54, 67);
         //alert(lblAttributeID.value);
         var type = document.getElementById('<%=lblType.ClientID %>');
         type.value = 'attribute';
@@ -489,7 +489,7 @@
                 $('[id*=txtWebPrice]').val($('[id*=txtPrice]').val());
         })
 
-        CKEDITOR.replace('<%=txtDescription.ClientID%>', { filebrowserUploadUrl: 'uploadImage.ashx' });
+        CKEDITOR.replace('<%=txtDescription.ClientID%>', { filebrowserUploadUrl: '/webShopAdmin/uploadImage.ashx' });
         CKEDITOR.config.height = 300;
     })
 </script>

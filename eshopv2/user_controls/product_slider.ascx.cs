@@ -21,6 +21,7 @@ namespace eshopv2.user_controls
         private int _numberOfProducts;
         private int _slidesCount;
         private string _name;
+        private string _type;
 
         public List<Product> Products
         {
@@ -46,6 +47,12 @@ namespace eshopv2.user_controls
                 _name = value;
                 setName();
             }
+        }
+
+        public string Type
+        {
+            get { return _type; }
+            set { _type = value; }
         }
 
         protected void Page_Load(object sender, EventArgs e)

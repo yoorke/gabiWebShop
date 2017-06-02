@@ -1,6 +1,6 @@
 ﻿@import 'bootstrap-less/bootstrap.less';
 
-@brand-primary:                     #4e4e4e;
+@brand-primary:                     #999;
 @default-div-vertical-padding:  1em;
 @default-div-horizontal-padding:0em;
 @logo-height:                       70px;
@@ -523,4 +523,42 @@ body{
 
 .button{
     background-color:@logo-primary;
+}
+
+.btn-order{
+    background-color:#4c9e15;
+    padding:2em 4em;
+    color:#fff;
+}
+
+.btn-order:hover{
+    background-color:darken(#4c9e15, 15%);
+    color:#fff;
+}
+
+.notInStock {
+    background-color: #aaa !important;
+}
+
+.tooltipwrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltipwrapper:hover .tooltiptext {
+    visibility: visible;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    background-color: #ff3b3f;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    bottom: 110%;
+    left: -10%;
+    position: absolute;
+    width: 120%;
+    border: 1px solid #b72a2d;
+    animation: fadein 0.2s;
 }

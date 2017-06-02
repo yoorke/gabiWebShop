@@ -115,7 +115,7 @@ namespace eshopv2
                 loadPrices(categoryUrl, priceFrom, priceTo, category.ParentCategoryID == 1);
 
                 
-                ViewState["pageTitle"] = category.Name + " | Milupino";
+                ViewState["pageTitle"] = category.Name + " | Gabi - boje i lakovi";
                 ViewState["categoryUrl"] = category.Url;
 
                 if (category.Slider != null && category.Slider.SliderID > 0)

@@ -60,8 +60,8 @@ namespace eshopv2
                 Page.Title = ViewState["pageTitle"].ToString();
                 
             }
-            lblProductFacebookLike.InnerHtml = "<div class='fb-like' data-href='http://www.milupino.rs" + Page.Request.RawUrl + "' data-width='100' data-layout='button_count' data-action='like' data-show-faces='true' data-share='true'></div>";
-            createProductTags();
+            //lblProductFacebookLike.InnerHtml = "<div class='fb-like' data-href='http://www.milupino.rs" + Page.Request.RawUrl + "' data-width='100' data-layout='button_count' data-action='like' data-show-faces='true' data-share='true'></div>";
+            //createProductTags();
             canonicalUrl.Text = @"<link rel=""canonical"" href=""" + ConfigurationManager.AppSettings["webShopUrl"] + ViewState["productUrl"] + @"""/>";
         }
 
@@ -98,6 +98,18 @@ namespace eshopv2
             lnkCategory.Text = product.Categories[0].Name;
             ViewState["productUrl"] = product.Url;
             loadProductSliders(product.Brand, product.Categories[0]);
+
+            txtAvailability.Text = product.IsInStock ? "Na stanju" : "Nema na stanju";
+            btnCartAjax.Attributes.Add("onclick", "AddToCart('" + lblProductID.ClientID + "')");
+            
+            if(!product.IsInStock)
+            {
+                btnCartAjax.Attributes.Add("class", "btnAddToCart notInStock tooltipwrapper");
+                txtTooltip.InnerText = "NEMA NA STANJU";
+
+                if (!bool.Parse(ConfigurationManager.AppSettings["allowOrderIfNotInStock"]))
+                    btnCartAjax.Attributes.Add("disabled", "true");
+            }
 
             if(bool.Parse(ConfigurationManager.AppSettings["hidePrice"]) && ! User.Identity.IsAuthenticated)
             {

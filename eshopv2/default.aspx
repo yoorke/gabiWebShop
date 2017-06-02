@@ -42,7 +42,7 @@
                 </HeaderTemplate>
                 <ItemTemplate>
                     <asp:HiddenField ID="lblPromotionID" runat="server" Value='<%#Eval("promotionID") %>' />
-                    <ps:ProductSlider ID="productSlider1" runat="server" />
+                    <ps:ProductSlider ID="productSlider1" runat="server" Type="akcija" />
                 </ItemTemplate>
                 <FooterTemplate>
                 </FooterTemplate>
@@ -54,7 +54,7 @@
                     <asp:HiddenField ID="lblCategoryID" runat="server" Value='<%#Eval("categoryID") %>' />
                     <asp:HiddenField ID="lblNumberOfProducts" runat="server" Value='<%#Eval("numberOfProducts") %>' />
                     <asp:HiddenField ID="lblFirstPageOrderBy" runat="server" Value='<%#Eval("firstPageOrderBy") %>' />
-                    <ps:ProductSlider ID="productSlider2" runat="server" />
+                    <ps:ProductSlider ID="productSlider2" runat="server" Type="proizvodi" />
                 </ItemTemplate>
                 <FooterTemplate>
                 </FooterTemplate>

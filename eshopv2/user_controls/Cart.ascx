@@ -82,7 +82,7 @@
     <div class="col-lg-6">
         <div class="pull-right">
             <asp:LinkButton ID="btnContinueShopping" runat="server" Text="Nastavi kupovinu" OnClick="btnContinueShopping_Click" CssClass="btn btn-default"></asp:LinkButton>    
-            <asp:LinkButton ID="btnCheckout" runat="server" Text="Naruči" OnClick="btnCheckout_Click" CssClass="btn btn-primary"></asp:LinkButton>
+            <asp:LinkButton ID="btnCheckout" runat="server" Text="Naruči" OnClick="btnCheckout_Click" CssClass="btn btn-primary button"></asp:LinkButton>
         </div>
     </div><!--col-->
 </div><!--row-->

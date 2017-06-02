@@ -191,8 +191,10 @@ header {
   padding: 0 20px;
 }
 
-.cd-dropdown-content li.has-children{
-    position:relative;
+@media only screen and (min-width:1024px){
+    .cd-dropdown-content li.has-children{
+        position:relative;
+    }
 }
 
 .cd-dropdown {
