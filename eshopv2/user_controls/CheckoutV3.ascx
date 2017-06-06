@@ -269,7 +269,7 @@
                                                             <asp:ListItem Text="Preuzimanje u radnji" Value="2"></asp:ListItem>                                                
                                                         </asp:RadioButtonList>
                                                         <div id="showDeliveryInfo" class="margin-top-2" style="display:block" runat="server">
-                                                            <ul>
+                                                            <ul style="list-style-type:none">
                                                                 <li><small>Za porudžbine preko 5.000,00 dinara dostava je BESPLATNA.</small></li>
                                                                 <li><small>Za porudžbine čija vrednost ne prelazi 5.000,00 dinara naplaćuje se dostava po cenovniku kurirske službe.</small></li>
                                                             </ul>
@@ -359,7 +359,9 @@
                                                 </p>
                                                 <p>
                                                     <span class="priceTitle">Iznos dostave:</span>
-                                                    <asp:Label ID="lblDeliveryPrice" runat="server" CssClass="price"></asp:Label>
+                                                    <asp:Label ID="lblDeliveryPrice" runat="server" CssClass="price">
+                                                        <asp:HyperLink ID="lnkDeliveryPrice" runat="server" NavigateUrl="~/cena-dostave" Text="Po cenovniku kurirske službe" Target="_blank"></asp:HyperLink>
+                                                    </asp:Label>
                                                 </p>
                                                 <p>
                                                     <span class="priceTitle">Ukupno:</span>

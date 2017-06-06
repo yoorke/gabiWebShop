@@ -84,6 +84,7 @@ namespace eshopv2
             routes.MapPageRoute("izmena-sifre", "izmena-sifre", "~/passwordChange.aspx");
             routes.MapPageRoute("pretraga", "pretraga", "~/search.aspx");
             routes.MapPageRoute("porudzbinaUspesna", "porudzbina-uspesna", "~/orderSuccessful.aspx");
+            routes.MapPageRoute("cena-dostave", "cena-dostave", "~/cenaDostave.aspx");
             
 
             foreach(CustomPage customPage in new CustomPageBL().GetCustomPages())

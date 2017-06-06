@@ -77,19 +77,15 @@
     </Reference>
     <Reference Include="eshopBE, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\WebShopFramework\eshopBE\bin\Debug\eshopBE.dll</HintPath>
+      <HintPath>C:\Korisnici\Web sajtovi\WebShopFramework\eshopBE\bin\Debug\eshopBE.dll</HintPath>
     </Reference>
     <Reference Include="eshopBL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\WebShopFramework\eshopBL\bin\Debug\eshopBL.dll</HintPath>
-    </Reference>
-    <Reference Include="eshopDL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\WebShopFramework\eshopDL\bin\Debug\eshopDL.dll</HintPath>
+      <HintPath>C:\Korisnici\Web sajtovi\WebShopFramework\eshopBL\bin\Debug\eshopBL.dll</HintPath>
     </Reference>
     <Reference Include="eshopUtilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\WebShopFramework\eshopUtilities\bin\Debug\eshopUtilities.dll</HintPath>
+      <HintPath>C:\Korisnici\Web sajtovi\WebShopFramework\eshopUtilities\bin\Debug\eshopUtilities.dll</HintPath>
     </Reference>
     <Reference Include="Intelligencia.UrlRewriter, Version=1.7.0.0, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
@@ -128,6 +124,7 @@
       <DependentUpon>style.css</DependentUpon>
     </Content>
     <Content Include="account.aspx" />
+    <Content Include="cenaDostave.aspx" />
     <Content Include="css\lightbox.css" />
     <Content Include="css\mainMenuVertical.css" />
     <Content Include="css\mainMenuVerticalV2.css" />
@@ -191,6 +188,13 @@
     </Compile>
     <Compile Include="cart.aspx.designer.cs">
       <DependentUpon>cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cenaDostave.aspx.cs">
+      <DependentUpon>cenaDostave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cenaDostave.aspx.designer.cs">
+      <DependentUpon>cenaDostave.aspx</DependentUpon>
     </Compile>
     <Compile Include="checkout.aspx.cs">
       <DependentUpon>checkout.aspx</DependentUpon>

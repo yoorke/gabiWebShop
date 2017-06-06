@@ -391,6 +391,15 @@ namespace eshopv2.user_controls {
         protected global::System.Web.UI.WebControls.Label lblDeliveryPrice;
         
         /// <summary>
+        /// lnkDeliveryPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkDeliveryPrice;
+        
+        /// <summary>
         /// lblTotal control.
         /// </summary>
         /// <remarks>
