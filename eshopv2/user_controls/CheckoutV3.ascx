@@ -360,7 +360,7 @@
                                                 <p>
                                                     <span class="priceTitle">Iznos dostave:</span>
                                                     <asp:Label ID="lblDeliveryPrice" runat="server" CssClass="price">
-                                                        <asp:HyperLink ID="lnkDeliveryPrice" runat="server" NavigateUrl="~/cena-dostave" Text="Po cenovniku kurirske službe" Target="_blank"></asp:HyperLink>
+                                                        <%--<asp:HyperLink ID="lnkDeliveryPrice" runat="server" NavigateUrl="~/cena-dostave" Text="Po cenovniku kurirske službe" Target="_blank"></asp:HyperLink>--%>
                                                     </asp:Label>
                                                 </p>
                                                 <p>

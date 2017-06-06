@@ -203,7 +203,7 @@ namespace eshopv2.user_controls
             else lblCoupon.Text = string.Empty;
 
             lblCartValue.Text = string.Format("{0:N2}", cartTotal);
-            //lblDeliveryPrice.Text = string.Format("{0:N2}", delivery);
+            lblDeliveryPrice.Text = "Po cenovniku kurirske službe";
             lblTotal.Text = string.Format("{0:N2}", total) + " + cena dostave";
             lblDiscount.Text = string.Format("{0:N2}", saving);
         }
