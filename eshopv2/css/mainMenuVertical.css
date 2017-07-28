@@ -556,6 +556,7 @@ header {
     padding:0;
     margin:0;
     background-color:#f4f4f4;
+    list-style-type:none;
   }
   .cd-dropdown-content > li:last-of-type a {
     border-bottom: none;
