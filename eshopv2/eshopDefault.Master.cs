@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
 using eshopBL;
+using eshopBE;
 
 namespace eshopv2
 {
@@ -24,6 +25,7 @@ namespace eshopv2
                 ((HyperLink)loginView1.FindControl("lnkCreateUser")).NavigateUrl = Page.ResolveUrl("~/registracija");
 
             loadFooter();
+            loadSettings();
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)
@@ -61,6 +63,12 @@ namespace eshopv2
 
             //rptCategories.DataSource = new CategoryBL().GetNestedCategoriesList();
             //rptCategories.DataBind();
+        }
+
+        private void loadSettings()
+        {
+            Settings settings = new SettingsBL().GetSettings();
+            lblWorkingHours.Text = settings.WorkingHours;
         }
     }
 }

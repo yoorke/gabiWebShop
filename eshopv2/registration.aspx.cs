@@ -17,7 +17,7 @@ namespace eshopv2
         {
             Master.FindControl("mainMenuVertical").Visible = true;
             txtLastname.Focus();
-            botDetect1.UserInputClientID = CaptchaCode.ClientID;
+            //botDetect1.UserInputClientID = CaptchaCode.ClientID;
         }
 
         protected void btnCreateUser_Click(object sender, EventArgs e)

@@ -25,6 +25,7 @@
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -52,40 +53,24 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\eshop\eshop\eshop\bin\AjaxMin.dll</HintPath>
     </Reference>
-    <Reference Include="BotDetect">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Lanapsoft\BotDetect 3 CAPTCHA Component\Asp.Net\v3.5\BotDetect.dll</HintPath>
+    <Reference Include="BotDetect, Version=4.3.0.0, Culture=neutral, PublicKeyToken=74616036388b765f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Captcha.4.3.0\lib\net40\BotDetect.dll</HintPath>
+    </Reference>
+    <Reference Include="BotDetect.Web.Mvc, Version=4.3.0.0, Culture=neutral, PublicKeyToken=74616036388b765f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Captcha.4.3.0\lib\net40\BotDetect.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="CKEditor.NET, Version=3.6.4.0, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\eshop\eshop\eshop\bin\CKEditor.NET.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    <Reference Include="eshopBE">
+      <HintPath>..\..\..\WebShop - Framework\WebShopFramework\eshopBE\bin\Debug\eshopBE.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\CrystalDecisions.ReportSource.dll</HintPath>
+    <Reference Include="eshopBL">
+      <HintPath>..\..\..\WebShop - Framework\WebShopFramework\eshopBL\bin\Debug\eshopBL.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\CrystalDecisions.Shared.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\CrystalDecisions.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="eshopBE, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Korisnici\Web sajtovi\WebShopFramework\eshopBE\bin\Debug\eshopBE.dll</HintPath>
-    </Reference>
-    <Reference Include="eshopBL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Korisnici\Web sajtovi\WebShopFramework\eshopBL\bin\Debug\eshopBL.dll</HintPath>
-    </Reference>
-    <Reference Include="eshopUtilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Korisnici\Web sajtovi\WebShopFramework\eshopUtilities\bin\Debug\eshopUtilities.dll</HintPath>
+    <Reference Include="eshopUtilities">
+      <HintPath>..\..\..\WebShop - Framework\WebShopFramework\eshopUtilities\bin\Debug\eshopUtilities.dll</HintPath>
     </Reference>
     <Reference Include="Intelligencia.UrlRewriter, Version=1.7.0.0, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
@@ -554,6 +539,13 @@
     <Compile Include="webshopAdmin\categoryBanners.aspx.designer.cs">
       <DependentUpon>categoryBanners.aspx</DependentUpon>
     </Compile>
+    <Compile Include="webshopAdmin\companySettings.aspx.cs">
+      <DependentUpon>companySettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webshopAdmin\companySettings.aspx.designer.cs">
+      <DependentUpon>companySettings.aspx</DependentUpon>
+    </Compile>
     <Compile Include="webshopAdmin\coupon.aspx.cs">
       <DependentUpon>coupon.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -693,9 +685,6 @@
     </Compile>
     <Compile Include="webshopAdmin\promotions.aspx.designer.cs">
       <DependentUpon>promotions.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="webshopAdmin\reports\rptOrder1.cs">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="webshopAdmin\slider.aspx.cs">
       <DependentUpon>slider.aspx</DependentUpon>
@@ -1134,6 +1123,7 @@
     <Content Include="webshopAdmin\category.aspx" />
     <Content Include="webshopAdmin\categoryBanner.aspx" />
     <Content Include="webshopAdmin\categoryBanners.aspx" />
+    <Content Include="webshopAdmin\companySettings.aspx" />
     <Content Include="webshopAdmin\coupon.aspx" />
     <Content Include="webshopAdmin\coupons.aspx" />
     <Content Include="webshopAdmin\createUser.aspx" />
@@ -1308,6 +1298,7 @@
     <Content Include="less\checkout.less" />
     <Content Include="less\main_menu.less" />
     <Content Include="less\cart_fp.less" />
+    <None Include="packages.config" />
     <None Include="webshopAdmin\dsPrint.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsPrint2.Designer.cs</LastGenOutput>
@@ -1327,7 +1318,6 @@
     <Content Include="webshopAdmin\pdf\1-2016.pdf" />
     <Content Include="webshopAdmin\pdf\3-2016.pdf" />
     <Content Include="webshopAdmin\pdf\4-2016.pdf" />
-    <Content Include="webshopAdmin\reports\rptOrder.rpt" />
     <Content Include="webshopAdmin\uploadImage.ashx" />
   </ItemGroup>
   <ItemGroup>

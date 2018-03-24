@@ -173,8 +173,9 @@
                         </div>
                         <div class="workingHours">
                             <p>Radno vreme prodavnice</p>
-                            <p>Ponedeljak - Petak: 08:00 - 19:00</p>
-                            <p>Subota: 08:00 - 14:00</p>
+                            <%--<p>Ponedeljak - Petak: 08:00 - 19:00</p>--%>
+                            <asp:Label ID="lblWorkingHours" runat="server"></asp:Label>
+                            <%--<p>Subota: 08:00 - 14:00</p>--%>
                             <p>Nedeljom ne radimo</p>
                         </div>
                         <%--<a href="http://www.facebook.com" target="_blank"><img src="<%= ResolveUrl("~/images/Facebook_New_Logo_(2015).svg.png")  %>" class="img-responsive" /></a>--%>

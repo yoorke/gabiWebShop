@@ -83,11 +83,20 @@ namespace webshopAdmin
                 category.CategoryBannerID = cmbCategoryBanner.SelectedIndex > -1 ? int.Parse(cmbCategoryBanner.SelectedValue) : -1;
                 category.UpdateProductsFromExternalApplication = chkUpdateProductsFromExternalApplication.Checked;
                 category.ExportProducts = chkExportProducts.Checked;
-                category.ExternalID = int.Parse(txtExternalID.Text);
-                category.ExternalParentID = int.Parse(txtExternalParentID.Text);
+                category.ExternalID = int.Parse(txtExternalID.Text != string.Empty ? txtExternalID.Text : "0");
+                category.ExternalParentID = int.Parse(txtExternalParentID.Text != string.Empty ? txtExternalParentID.Text : "0");
+                category.ShowInFooter = chkShowInFooter.Checked;
+                category.ImageUrlSource = rdbImageTypeStandard.Checked ? 0 : 1;
+                int positionX = 0;
+                int positionY = 0;
+                category.ImageUrlPositionX = int.TryParse(txtPositionX.Text, out positionX) ? int.Parse(txtPositionX.Text) : 0;
+                category.ImageUrlPositionY = int.TryParse(txtPositionY.Text, out positionY) ? int.Parse(txtPositionY.Text) : 0;
+                category.Icon = txtIcon.Text;
 
                 CategoryBL categoryBl = new CategoryBL();
-                categoryBl.SaveCategory(category);
+                int categoryID = categoryBl.SaveCategory(category);
+
+                lblCategoryID.Value = categoryID.ToString();
 
 
             }
@@ -177,7 +186,7 @@ namespace webshopAdmin
             chkUpdateProductsFromExternalApplication.Checked = category.UpdateProductsFromExternalApplication;
             chkExportProducts.Checked = category.ExportProducts;
 
-            imgIcon.ImageUrl = category.ImageUrl != string.Empty ? Server.MapPath("~/images/" + category.ImageUrl) : "~/images/no-image.jpg";
+            imgIcon.ImageUrl = category.ImageUrl != string.Empty ? ResolveUrl("~/images/" + category.ImageUrl) : ResolveUrl("~/images/no-image.jpg");
             lblCategoryName.Text = category.Name;
             ViewState.Add("categoryName", category.Name);
             txtExternalID.Text = category.ExternalID.ToString();
@@ -189,6 +198,13 @@ namespace webshopAdmin
                 dgvAttributes.DataSource = attributeBL.GetAttributesForCategory(categoryID);
                 dgvAttributes.DataBind();
             }
+
+            chkShowInFooter.Checked = category.ShowInFooter;
+            rdbImageTypeStandard.Checked = category.ImageUrlSource == 0;
+            rdbImageTypeSprite.Checked = category.ImageUrlSource == 1;
+            txtPositionX.Text = category.ImageUrlPositionX.ToString();
+            txtPositionY.Text = category.ImageUrlPositionY.ToString();
+            txtIcon.Text = category.Icon;
         }
 
         protected void btnAddAttribute_Click(object sender, EventArgs e)
@@ -334,9 +350,10 @@ namespace webshopAdmin
             if (fluUpload.HasFile && txtName.Text != string.Empty)
             {
                 string extension = fluUpload.FileName.Substring(fluUpload.FileName.LastIndexOf('.'));
-                fluUpload.SaveAs(Server.MapPath("~/images/" + txtUrl.Text + extension));
-                txtImageUrl.Text = txtUrl.Text + extension;
-                imgIcon.ImageUrl = "~/images/" + txtUrl.Text + extension;
+                string filename = bool.Parse(ConfigurationManager.AppSettings["useCategorySprites"]) ? fluUpload.FileName : txtUrl.Text + extension;
+                fluUpload.SaveAs(Server.MapPath("~/images/" + (bool.Parse(ConfigurationManager.AppSettings["useCategorySprites"]) ? txtUrl.Text + extension : fluUpload.FileName)));
+                txtImageUrl.Text = filename;
+                imgIcon.ImageUrl = filename;
             }
             else
                 setStatus("Unesite naziv kategorije", System.Drawing.Color.Red, "warning");

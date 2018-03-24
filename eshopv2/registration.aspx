@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Registracija korisnika | Gabi - boje i lakovi" Language="C#" MasterPageFile="~/eshopDefault.Master" AutoEventWireup="true" CodeBehind="registration.aspx.cs" Inherits="eshopv2.registration" %>
-<%@ Register Assembly="BotDetect" Namespace="BotDetect.Web.UI" TagPrefix="BotDetect" %>
+<%@ Register Assembly="BotDetect" Namespace="BotDetect.Web.UI" TagPrefix="BotDetectCaptcha" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="<%=ResolveUrl("~/css/mainMenuVertical.css") %>" />
 </asp:Content>
@@ -105,7 +105,7 @@
                     <div class="text-center">
                         <!--<span class="col-sm-3"></span>-->
                         <div class="col-sm-12 margin-top-2 margin-bottom-2">
-                            <BotDetect:Captcha ID="botDetect1" runat="server" />
+                            <BotDetectCaptcha:WebFormsCaptcha ID="botDetect1" runat="server" />
                             <asp:TextBox ID="CaptchaCode" runat="server"></asp:TextBox>
                             <asp:Label ID="CaptchaErrorLabel" runat="server"></asp:Label>
                         </div>

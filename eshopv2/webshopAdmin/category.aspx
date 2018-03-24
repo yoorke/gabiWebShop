@@ -62,6 +62,13 @@
                                             </div>
                                         </div>
                                         <div class="row">
+                                            <div class="col-lg-12">
+                                                <label>Tip slike: </label>
+                                                <asp:RadioButton ID="rdbImageTypeStandard" runat="server" Checked="true" GroupName="tipSlike" Text="Standard" />
+                                                <asp:RadioButton ID="rdbImageTypeSprite" runat="server" GroupName="tipSlike" Text="Sprite" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
                                             <div class="col-md-6">
                                                 <asp:FileUpload ID="fluUpload" runat="server" />
                                             </div>
@@ -75,6 +82,25 @@
                                             </div>
                                             <div class="col-lg-6">
                                                 <asp:TextBox ID="txtImageUrl" runat="server" CssClass="form-control" placeholder="ImageUrl"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <label>Pozicija:</label>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <asp:TextBox ID="txtPositionX" runat="server" CssClass="form-control"></asp:TextBox>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <asp:TextBox ID="txtPositionY" runat="server" CssClass="form-control"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="row margin-top-05">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Ikonica:</label>
+                                                    <asp:TextBox ID="txtIcon" runat="server" CssClass="form-control"></asp:TextBox>
+                                                </div>
                                             </div>
                                         </div>
                                     </div><!--form-group-->
@@ -118,6 +144,9 @@
                                     <div class="form-group">
                                         <asp:TextBox ID="txtExternalParentID" runat="server" CssClass="form-control" style="display:none"></asp:TextBox>
                                     </div>
+                                    <div class="form-group">
+                                        <asp:CheckBox ID="chkShowInFooter" runat="server" CssClass="checkbox" Text="Prikaži u footer-u" />
+                                    </div>
                                 </div>
                             </div>
                         </div><!--row-->
@@ -146,51 +175,52 @@
                          </div><!--row-->
                         <div class="row margin-top-05">
                             <div class="col-lg-12">
-                                <asp:GridView ID="dgvAttributes" runat="server" AutoGenerateColumns="false"
-                                CssClass="table table-condesed table-hover table-bordered table-striped" OnRowDeleting="dgvAttributes_RowDeleting" DataKeyNames="attributeID">
-                                <Columns>
-                                    <asp:TemplateField HeaderText="attributeID" Visible="false">
-                                        <ItemTemplate>
-                                            <asp:Label ID="lblAttributeID" runat="server" Text='<%#Eval("attributeID") %>'></asp:Label>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                        
-                                    <asp:TemplateField HeaderText="Naziv" ControlStyle-Width="300px">
-                                        <ItemTemplate>
-                                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%#"/" + ConfigurationManager.AppSettings["webshopAdminUrl"] + "/attribute.aspx?id=" + Eval("attributeID") %>'>
-                                                <asp:Label ID="lblName" runat="server" Text='<%#Eval("name") %>'></asp:Label>
-                                            </asp:HyperLink>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                        
-                                    <asp:TemplateField HeaderText="Filter" ControlStyle-Width="30px" ItemStyle-Width="30px">
-                                        <ItemTemplate>
-                                            <asp:CheckBox ID="chkFilter" runat="server" Checked='<%#Eval("filter") %>' OnCheckedChanged="chkFilter_CheckedChanged" AutoPostBack="true" />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                        
-                                    <asp:TemplateField HeaderText="Opis" ControlStyle-Width="30px" ItemStyle-Width="30px">
-                                        <ItemTemplate>
-                                            <asp:CheckBox ID="chkIsDescription" runat="server" Checked='<%#Eval("isDescription") %>' OnCheckedChanged="chkIsDescription_CheckedChanged" AutoPostBack="true" />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                        
-                                    <asp:TemplateField HeaderText="Pozicija" ControlStyle-Width="30px" ItemStyle-Width="30px">
-                                        <ItemTemplate>
-                                            <asp:TextBox ID="txtPosition" runat="server" Text='<%#Eval("position") %>'></asp:TextBox>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
+                                <div class="table-responsive">
+                                    <asp:GridView ID="dgvAttributes" runat="server" AutoGenerateColumns="false"
+                                        CssClass="table table-condesed table-hover table-bordered table-striped" OnRowDeleting="dgvAttributes_RowDeleting" DataKeyNames="attributeID">
+                                        <Columns>
+                                            <asp:TemplateField HeaderText="attributeID" Visible="false">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="lblAttributeID" runat="server" Text='<%#Eval("attributeID") %>'></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
 
-                                    <asp:TemplateField HeaderText="Vrednosti" ControlStyle-Width="30px" ItemStyle-Width="30px">
-                                        <ItemTemplate>
-                                            <asp:Hyperlink ID="lnkValues" runat="server" NavigateUrl='<%# "/" + ConfigurationManager.AppSettings["webshopAdminUrl"] + "/attribute.aspx?id=" + Eval("attributeID") + "&tab=vrednosti"%>' Text="Vrednosti" Target="_blank"></asp:Hyperlink>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                        
-                                    <asp:CommandField ShowDeleteButton="true" DeleteText="Obriši" ControlStyle-Width="50px" />
-                                </Columns>
-                                </asp:GridView>
-                
+                                            <asp:TemplateField HeaderText="Naziv" ControlStyle-Width="300px">
+                                                <ItemTemplate>
+                                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%#"/" + ConfigurationManager.AppSettings["webshopAdminUrl"] + "/attribute.aspx?id=" + Eval("attributeID") %>'>
+                                                        <asp:Label ID="lblName" runat="server" Text='<%#Eval("name") %>'></asp:Label>
+                                                    </asp:HyperLink>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+
+                                            <asp:TemplateField HeaderText="Filter" ControlStyle-Width="30px" ItemStyle-Width="30px">
+                                                <ItemTemplate>
+                                                    <asp:CheckBox ID="chkFilter" runat="server" Checked='<%#Eval("filter") %>' OnCheckedChanged="chkFilter_CheckedChanged" AutoPostBack="true" />
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+
+                                            <asp:TemplateField HeaderText="Opis" ControlStyle-Width="30px" ItemStyle-Width="30px">
+                                                <ItemTemplate>
+                                                    <asp:CheckBox ID="chkIsDescription" runat="server" Checked='<%#Eval("isDescription") %>' OnCheckedChanged="chkIsDescription_CheckedChanged" AutoPostBack="true" />
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+
+                                            <asp:TemplateField HeaderText="Pozicija" ControlStyle-Width="30px" ItemStyle-Width="30px">
+                                                <ItemTemplate>
+                                                    <asp:TextBox ID="txtPosition" runat="server" Text='<%#Eval("position") %>'></asp:TextBox>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+
+                                            <asp:TemplateField HeaderText="Vrednosti" ControlStyle-Width="30px" ItemStyle-Width="30px">
+                                                <ItemTemplate>
+                                                    <asp:HyperLink ID="lnkValues" runat="server" NavigateUrl='<%# "/" + ConfigurationManager.AppSettings["webshopAdminUrl"] + "/attribute.aspx?id=" + Eval("attributeID") + "&tab=vrednosti"%>' Text="Vrednosti" Target="_blank"></asp:HyperLink>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+
+                                            <asp:CommandField ShowDeleteButton="true" DeleteText="Obriši" ControlStyle-Width="50px" />
+                                        </Columns>
+                                    </asp:GridView>
+                                </div>
                                 
                             </div><!--col-->
                                 
