@@ -324,7 +324,7 @@ namespace eshopv2
         {
             if((int)category.ParentCategoryID != 1)
             { 
-                rptSubcategories.DataSource = new CategoryBL().GetAllSubCategories((int)category.ParentCategoryID);
+                rptSubcategories.DataSource = new CategoryBL().GetAllSubCategories((int)category.ParentCategoryID, false);
                 rptSubcategories.DataBind();
             }
         }

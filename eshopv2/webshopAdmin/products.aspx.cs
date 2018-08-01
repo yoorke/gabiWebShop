@@ -14,6 +14,7 @@ using eshopBE;
 using eshopBL;
 using System.Collections.Generic;
 using System.Data;
+using eshopUtilities;
 
 namespace webshopAdmin
 {
@@ -132,6 +133,11 @@ namespace webshopAdmin
             cmbSort.Items.Add(new ListItem("Datumu unosa", "product.insertDate"));
             cmbSort.Items.Add(new ListItem("Datumu izmene", "product.updateDate"));
             cmbSort.Items.Add(new ListItem("Datum izmene opadajuće", "product.updateDate DESC"));
+
+            cmbNewCategory.DataSource = new CategoryBL().GetNestedCategoriesDataTable(true, true);
+            cmbNewCategory.DataTextField = "name";
+            cmbNewCategory.DataValueField = "categoryID";
+            cmbNewCategory.DataBind();
         }
 
         protected void btnShowProducts_Click(object sender, EventArgs e)
@@ -146,10 +152,21 @@ namespace webshopAdmin
 
         protected void dgvProducts_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            ProductBL productBL = new ProductBL();
-            productBL.DeleteProduct(int.Parse(dgvProducts.DataKeys[e.RowIndex].Values[0].ToString()));
+            try
+            { 
+                ProductBL productBL = new ProductBL();
+                productBL.DeleteProduct(int.Parse(dgvProducts.DataKeys[e.RowIndex].Values[0].ToString()));
 
-            Page.Response.Redirect("~/" + ConfigurationManager.AppSettings["webshopAdminUrl"] + "/products.aspx");
+                Page.Response.Redirect("~/" + ConfigurationManager.AppSettings["webshopAdminUrl"] + "/products.aspx");
+            }
+            catch(BLException blEx)
+            {
+                setStatus(blEx.Message, System.Drawing.Color.Red, true, "danger");
+            }
+            catch(Exception ex)
+            {
+                setStatus("Nije moguće obrisati proizvod.", System.Drawing.Color.Red, true, "danger");
+            }
         }
 
         protected void dgvProducts_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -184,7 +201,7 @@ namespace webshopAdmin
             csStatus.Text = text;
             csStatus.Visible = visible;
             csStatus.ForeColor = foreColor;
-            csStatus.Class = "status " + status;
+            csStatus.Class = status;
             csStatus.Show();
         }
 
