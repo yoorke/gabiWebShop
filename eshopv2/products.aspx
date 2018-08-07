@@ -40,7 +40,7 @@
                 </HeaderTemplate>
                 <ItemTemplate>
                     <li>
-                        <asp:HyperLink ID="lnkSubcategory" runat="server" NavigateUrl='<%#"/proizvodi/" + Eval("url") %>' Text='<%#Eval("name") %>'></asp:HyperLink>
+                        <asp:HyperLink ID="lnkSubcategory" runat="server" NavigateUrl='<%#Eval("url") %>' Text='<%#Eval("name") %>'></asp:HyperLink>
                     </li>
                 </ItemTemplate>
                 <FooterTemplate>

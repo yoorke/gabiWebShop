@@ -71,50 +71,56 @@ namespace eshopv2
             Product product = productBL.GetProduct(productID, string.Empty, true, string.Empty);
 
             //images = product.Images;
-            priProductImages.Images = product.Images;
-            priProductImages.ShowImages();
-
-            lblBrand.Text = product.Brand.Name;
-            lblName.Text = product.Name;
-            lblNamePrimary.Text = product.Name;
-            lblDescription.Text = product.Description;
-            lblPrice.Text = string.Format("{0:N2}", product.Price);
-            lblWebPrice.Text = (product.Promotion == null) ? string.Format("{0:N2}", product.WebPrice) + " din" : string.Format("{0:N2}", product.Promotion.Price) + " din";
-            lblSaving.Text = "Ušteda: " + string.Format("{0:N2}", product.Price - double.Parse(lblWebPrice.Text.Substring(0, lblWebPrice.Text.IndexOf(" din")))) + " din";
-            lblSpecification.Text = (product.Specification != null) ? (!product.Specification.Contains("<table class='table table-striped'><tbody></table>") ? product.Specification : "Nema podataka") : "Nema podataka";
-            lblDescription.Text = product.Description;
-            if (product.Promotion != null)
+            if (product != null)
             {
-                imgPromotion.ImageUrl = "/images/" + product.Promotion.ImageUrl;
-                imgPromotion.Visible = true;
+                priProductImages.Images = product.Images;
+                priProductImages.ShowImages();
+
+                lblBrand.Text = product.Brand.Name;
+                lblName.Text = product.Name;
+                lblNamePrimary.Text = product.Name;
+                lblDescription.Text = product.Description;
+                lblPrice.Text = string.Format("{0:N2}", product.Price);
+                lblWebPrice.Text = (product.Promotion == null) ? string.Format("{0:N2}", product.WebPrice) + " din" : string.Format("{0:N2}", product.Promotion.Price) + " din";
+                lblSaving.Text = "Ušteda: " + string.Format("{0:N2}", product.Price - double.Parse(lblWebPrice.Text.Substring(0, lblWebPrice.Text.IndexOf(" din")))) + " din";
+                lblSpecification.Text = (product.Specification != null) ? (!product.Specification.Contains("<table class='table table-striped'><tbody></table>") ? product.Specification : "Nema podataka") : "Nema podataka";
+                lblDescription.Text = product.Description;
+                if (product.Promotion != null)
+                {
+                    imgPromotion.ImageUrl = "/images/" + product.Promotion.ImageUrl;
+                    imgPromotion.Visible = true;
+                }
+                lblProductID.Value = product.ProductID.ToString();
+                Page.Title = product.Brand.Name + " " + product.Name;
+                ViewState.Add("pageTitle", Page.Title);
+                ViewState.Add("productDescription", product.Description);
+                ViewState.Add("image", product.Images != null && product.Images.Count > 0 ? product.Images[0].ImageUrl : string.Empty);
+
+                lnkCategory.NavigateUrl = "/proizvodi/" + product.Categories[0].Url;
+                lnkCategory.Text = product.Categories[0].Name;
+                ViewState["productUrl"] = product.Url;
+                loadProductSliders(product.Brand, product.Categories[0]);
+
+                txtAvailability.Text = product.IsInStock ? "Na stanju" : "Nema na stanju";
+                btnCartAjax.Attributes.Add("onclick", "AddToCart('" + lblProductID.ClientID + "')");
+
+                if (!product.IsInStock)
+                {
+                    btnCartAjax.Attributes.Add("class", "btnAddToCart notInStock tooltipwrapper");
+                    txtTooltip.InnerText = "NEMA NA STANJU";
+
+                    if (!bool.Parse(ConfigurationManager.AppSettings["allowOrderIfNotInStock"]))
+                        btnCartAjax.Attributes.Add("disabled", "true");
+                }
+
+                if (bool.Parse(ConfigurationManager.AppSettings["hidePrice"]) && !User.Identity.IsAuthenticated)
+                {
+                    orderDiv.Visible = false;
+                }
+
             }
-            lblProductID.Value = product.ProductID.ToString();
-            Page.Title = product.Brand.Name + " " + product.Name;
-            ViewState.Add("pageTitle", Page.Title);
-            ViewState.Add("productDescription", product.Description);
-            ViewState.Add("image", product.Images != null && product.Images.Count > 0 ? product.Images[0].ImageUrl : string.Empty);
-
-            lnkCategory.NavigateUrl = "/proizvodi/" + product.Categories[0].Url;
-            lnkCategory.Text = product.Categories[0].Name;
-            ViewState["productUrl"] = product.Url;
-            loadProductSliders(product.Brand, product.Categories[0]);
-
-            txtAvailability.Text = product.IsInStock ? "Na stanju" : "Nema na stanju";
-            btnCartAjax.Attributes.Add("onclick", "AddToCart('" + lblProductID.ClientID + "')");
-            
-            if(!product.IsInStock)
-            {
-                btnCartAjax.Attributes.Add("class", "btnAddToCart notInStock tooltipwrapper");
-                txtTooltip.InnerText = "NEMA NA STANJU";
-
-                if (!bool.Parse(ConfigurationManager.AppSettings["allowOrderIfNotInStock"]))
-                    btnCartAjax.Attributes.Add("disabled", "true");
-            }
-
-            if(bool.Parse(ConfigurationManager.AppSettings["hidePrice"]) && ! User.Identity.IsAuthenticated)
-            {
-                orderDiv.Visible = false;
-            }
+            else
+                Server.Transfer("~/not-found.aspx");
         }
 
         protected void btnCart_Click(object sender, EventArgs e)
