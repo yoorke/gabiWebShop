@@ -50,7 +50,7 @@ namespace webshopAdmin
         {
             if(e.Row.RowType == DataControlRowType.DataRow)
             {
-                if (((Label)e.Row.FindControl("lblUsername")).Text == "admin")
+                if (((Label)e.Row.FindControl("lblUsername")).Text.StartsWith("admin"))
                     ((ImageButton)e.Row.Cells[5].Controls[0]).Visible = false;
             }
         }
