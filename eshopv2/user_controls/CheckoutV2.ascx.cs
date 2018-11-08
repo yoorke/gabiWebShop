@@ -40,7 +40,7 @@ namespace eshopv2.user_controls
                 int userID=1;
                 if (chkCreateAccount.Checked)
                 {
-                    userID = createUser();
+                    userID = createUser().UserID;
                     if (userID > 0)
                         FormsAuthentication.SetAuthCookie(txtEmail.Text, true);
                 }
@@ -114,7 +114,7 @@ namespace eshopv2.user_controls
             return order;
         }
 
-        private int createUser()
+        private User createUser()
         {
             return UserBL.SaveUser(txtFirstname.Text, txtLastname.Text, txtEmail.Text, string.Empty, txtEmail.Text, txtAddress.Text, txtCity.Text, txtPhone.Text, "kupac", txtZip.Text);
         }

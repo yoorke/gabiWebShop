@@ -40,7 +40,7 @@ namespace eshopv2
             {
                 user_controls.product_slider productSlider = (user_controls.product_slider)e.Item.FindControl("productSlider1");
                 ProductBL productBL = new ProductBL();
-                productSlider.NumberOfProducts = 6;
+                productSlider.NumberOfProducts =4 ;
                 productSlider.Products = productBL.GetProductsForPromotion(int.Parse(((HiddenField)e.Item.FindControl("lblPromotionID")).Value));
                 //productSlider.Type = "akcija";
                 ((Literal)productSlider.FindControl("lblPrev")).Text = @"<a id=""prev"" runat=""server"" href=" + "#carousel" + ((HiddenField)e.Item.FindControl("lblPromotionID")).Value + @" data-slide=""prev""><img src=" + Page.ResolveUrl("~/images/prev_next.gif") + @" alt=""Prethodni"" /></a>";
@@ -56,7 +56,7 @@ namespace eshopv2
             {
                 user_controls.product_slider productSlider = (user_controls.product_slider)e.Item.FindControl("productSlider2");
                 ProductBL productBL = new ProductBL();
-                productSlider.NumberOfProducts = 6;
+                productSlider.NumberOfProducts = 4;
                 productSlider.Products = productBL.GetProductsForFirstPage(int.Parse(((HiddenField)e.Item.FindControl("lblCategoryID")).Value), -1, 8, "Slučajni");
                 //productSlider.Type = "proizvodi";
                 ((HtmlControl)productSlider.FindControl("carouselexample")).Attributes["id"] = "carousel" + ((HiddenField)e.Item.FindControl("lblCategoryID")).Value;

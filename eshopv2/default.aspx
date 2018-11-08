@@ -17,17 +17,45 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3 padding-left-0">
-            <YT:Banner ID="banner1" runat="server" Position="FP1" />
+        <div class="col-md-3 padding-left-0 padding-right-0">
+            <%--<YT:Banner ID="banner1" runat="server" Position="FP1" />--%>
+            <a class="info-box" href="#">
+                <span class="icon"><span class="fa fa-fw fa-truck"></span></span>
+                <div class="description">
+                    <span class="text">Besplatna dostava</span>
+                    <span class="text second">saznajte više</span>
+                    </div>
+            </a>
         </div>
-        <div class="col-md-3">
-            <YT:Banner ID="banner2" runat="server" Position="FP2" />
+        <div class="col-md-3 padding-left-0 padding-right-0">
+            <%--<YT:Banner ID="banner2" runat="server" Position="FP2" />--%>
+            <a class="info-box" href="#">
+                <span class="icon"><span class="fa fa-fw fa-credit-card"></span></span>
+                <div class="description">
+                    <span class="text"><strong>GABI kartica</strong></span>
+                    <span class="text second">sakupljajte bodove</span>
+                </div>
+            </a>
         </div>
-        <div class="col-md-3">
-            <YT:Banner ID="banner3" runat="server" Position="FP3" />
+        <div class="col-md-3 padding-left-0 padding-right-0">
+            <%--<YT:Banner ID="banner3" runat="server" Position="FP3" />--%>
+            <a class="info-box" href="#">
+                <span class="icon"><span class="fa fa-fw fa-cc-visa"></span></span>
+                <div class="description">
+                    <span class="text"><strong>Online</strong> plaćanje karticama</span>
+                    <span class="text second">saznajte više</span>
+                </div>
+            </a>
         </div>
-        <div class="col-md-3 padding-right-0 bannerFP4">
-            <YT:Banner ID="banner4" runat="server" Position="FP4" />
+        <div class="col-md-3 padding-right-0 bannerFP4 padding-left-0">
+            <%--<YT:Banner ID="banner4" runat="server" Position="FP4" />--%>
+            <a class="info-box" href="#">
+                <span class="icon"><span class="fa fa-fw fa-facebook"></span></span>
+                <div class="description">
+                    <span class="text">Posetite na na Facebook-u</span>
+                    <span class="text second">posetite nas</span>
+                </div>
+            </a>
         </div>
     </div>
     <div class="row">

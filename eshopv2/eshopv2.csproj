@@ -12,7 +12,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>eshopv2</RootNamespace>
     <AssemblyName>eshopv2</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -35,6 +35,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -43,8 +44,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AegisImplicitMail">
+      <HintPath>..\..\..\WebShop - Framework\WebShopFramework\eshopUtilities\bin\Debug\AegisImplicitMail.dll</HintPath>
+    </Reference>
     <Reference Include="AjaxControlToolkit, Version=3.5.7.1213, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\eshop\eshop\eshop\bin\AjaxControlToolkit.dll</HintPath>
@@ -69,12 +74,11 @@
     <Reference Include="eshopBL">
       <HintPath>..\..\..\WebShop - Framework\WebShopFramework\eshopBL\bin\Debug\eshopBL.dll</HintPath>
     </Reference>
+    <Reference Include="eshopDL">
+      <HintPath>..\..\..\WebShop - Framework\WebShopFramework\eshopDL\bin\Debug\eshopDL.dll</HintPath>
+    </Reference>
     <Reference Include="eshopUtilities">
       <HintPath>..\..\..\WebShop - Framework\WebShopFramework\eshopUtilities\bin\Debug\eshopUtilities.dll</HintPath>
-    </Reference>
-    <Reference Include="Intelligencia.UrlRewriter, Version=1.7.0.0, Culture=neutral">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\eshop\eshop\eshop\bin\Intelligencia.UrlRewriter.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

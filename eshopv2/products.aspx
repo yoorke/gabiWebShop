@@ -51,8 +51,8 @@
     </div>
     <div class="col-xs-7 col-sm-10 col-md-10, col-lg-10 main-content">
         <YT:Slider ID="slider" runat="server" />
-        <div class="row">
-            <div class="col-lg-5">
+        <div class="row margin-top-05">
+            <div class="col-lg-5 product-pager">
                 <pager:Pager ID="pgrPager" runat="server" OnOnClick="pgrPages_Click" />
             </div>
             <div class="col-lg-7">
@@ -88,13 +88,13 @@
         <div class="row product_box padding-left-05 padding-right-05">
             <asp:Repeater ID="rptProducts" runat="server">
                 <ItemTemplate>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 padding-left-0 padding-right-0 margin-top-05">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 padding-left-0 padding-right-0 margin-top-05 product-fp-col">
                         <product_fp:Product_fp ID="product_fp" runat="server" ProductItem='<%#Container.DataItem %>' />
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
         </div>
-        <div class="row">
+        <div class="row product-pager">
             <div class="col-lg-5">
                 <pager:Pager ID="pgrPager1" runat="server" OnOnClick="pgrPages_Click" />
                 <asp:HiddenField ID="lblPageIndex" runat="server" />

@@ -49,7 +49,7 @@ namespace eshopv2
         private void searchProducts()
         {
             string searchString = ViewState["searchString"].ToString();
-            List<Product> products = new ProductBL().SearchProducts(searchString, sort);
+            List<Product> products = new ProductBL().SearchProducts(searchString, sort, -1);
             PagedDataSource pagedDataSource = new PagedDataSource();
             pagedDataSource.DataSource = products;
             pagedDataSource.AllowPaging = true;

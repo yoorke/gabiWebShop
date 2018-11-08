@@ -1,6 +1,7 @@
 ﻿#top{
     background-color:#333;
     color:#f8f8f8;
+    padding: 0.2em 0;
 }
 
 #top a{
@@ -14,7 +15,28 @@
 
     .logo{
         img{
-            max-height:140px;
+            max-height:70px;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media only screen and (max-width: 990px){
+    #header{
+        .logo{
+            img{
+                max-height:70px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 440px){
+    #header{
+        .logo{
+            img{
+                max-height:50px;
+            }
         }
     }
 }

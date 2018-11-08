@@ -33,7 +33,10 @@
         <div id="top">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-4 pull-right text-right">
+                    <div class="col-xs-8">
+                        <span>Gabi - boje i lakovi | Vaša farbara</span>
+                    </div>
+                    <div class="col-xs-4 pull-right text-right">
                         <asp:LoginView ID="loginView1" runat="server">
                             <AnonymousTemplate>
                                 <asp:HyperLink ID="lnkLogin" runat="server" Text="Prijava"></asp:HyperLink> / <asp:HyperLink ID="lnkCreateUser" runat="server" Text="Registracija"></asp:HyperLink>
