@@ -128,7 +128,7 @@
                             <FooterTemplate></ul></FooterTemplate>
                         </asp:Repeater>--%>
                         <a href="/gde-kupiti">
-                            <img class="img-responsive margin-top-2 margin-bottom-2" src="/images/map.jpg" />
+                            <img class="img-responsive margin-top-2 margin-bottom-2" src="/images/map.jpg" title="Gde kupiti - Gabi maloprodaja" alt="Gde kupiti - Gabi maloprodaja" />
                         </a>
                     </div>
                     <div class="col-sm-3">
