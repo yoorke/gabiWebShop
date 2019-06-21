@@ -22,13 +22,13 @@ namespace eshopv2 {
         protected global::eshopv2.user_controls.Slider slider1;
         
         /// <summary>
-        /// banner5 control.
+        /// banner6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::eshopv2.user_controls.Banner banner5;
+        protected global::eshopv2.user_controls.Banner banner6;
         
         /// <summary>
         /// rptPromotions control.
@@ -38,6 +38,15 @@ namespace eshopv2 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptPromotions;
+        
+        /// <summary>
+        /// banner5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::eshopv2.user_controls.Banner banner5;
         
         /// <summary>
         /// rptCategories control.

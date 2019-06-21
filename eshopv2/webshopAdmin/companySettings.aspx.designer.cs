@@ -22,6 +22,15 @@ namespace WebShopAdmin.webshopAdmin {
         protected global::System.Web.UI.WebControls.Button btnSave;
         
         /// <summary>
+        /// csStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::webshopAdmin.CustomStatus csStatus;
+        
+        /// <summary>
         /// txtCompanyName control.
         /// </summary>
         /// <remarks>
@@ -47,5 +56,41 @@ namespace WebShopAdmin.webshopAdmin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtWorkingHours;
+        
+        /// <summary>
+        /// txtUnknownBrandName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtUnknownBrandName;
+        
+        /// <summary>
+        /// txtDeliveryCost control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDeliveryCost;
+        
+        /// <summary>
+        /// txtFreeDeliveryTotalValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFreeDeliveryTotalValue;
+        
+        /// <summary>
+        /// txtExchangeRate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtExchangeRate;
     }
 }

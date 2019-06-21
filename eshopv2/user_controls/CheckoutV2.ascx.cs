@@ -51,10 +51,10 @@ namespace eshopv2.user_controls
                 User user = UserBL.GetUser(userID, string.Empty);
                 Order order = createOrder(user);
 
-                
 
-                Common.SendOrderConfirmationMail(txtEmail.Text, txtFirstname.Text + " " + txtLastname.Text, order);
-                Common.SendNewOrderNotification(order.OrderID.ToString(), order);
+                Settings settings = new SettingsBL().GetSettings();
+                Common.SendOrderConfirmationMail(txtEmail.Text, txtFirstname.Text + " " + txtLastname.Text, order, settings);
+                Common.SendNewOrderNotification(order.OrderID.ToString(), order, settings);
                 Server.Transfer("/orderSuccessful.aspx");
             }
             catch (BLException ex)

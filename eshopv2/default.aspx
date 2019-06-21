@@ -16,40 +16,40 @@
             <slider:Slider ID="slider1" runat="server" SliderID="12" />
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-3 padding-left-0 padding-right-0">
+    <%--<div class="row">
+        <div class="col-md-3 padding-left-0 padding-right-0">--%>
             <%--<YT:Banner ID="banner1" runat="server" Position="FP1" />--%>
-            <a class="info-box" href="#">
+            <%--<a class="info-box" href="#">
                 <span class="icon"><span class="fa fa-fw fa-truck"></span></span>
                 <div class="description">
                     <span class="text">Besplatna dostava</span>
                     <span class="text second">saznajte više</span>
                     </div>
             </a>
-        </div>
-        <div class="col-md-3 padding-left-0 padding-right-0">
+        </div>--%>
+        <%--<div class="col-md-3 padding-left-0 padding-right-0">--%>
             <%--<YT:Banner ID="banner2" runat="server" Position="FP2" />--%>
-            <a class="info-box" href="#">
+            <%--<a class="info-box" href="#">
                 <span class="icon"><span class="fa fa-fw fa-credit-card"></span></span>
                 <div class="description">
                     <span class="text"><strong>GABI kartica</strong></span>
                     <span class="text second">sakupljajte bodove</span>
                 </div>
             </a>
-        </div>
-        <div class="col-md-3 padding-left-0 padding-right-0">
+        </div>--%>
+        <%--<div class="col-md-3 padding-left-0 padding-right-0">--%>
             <%--<YT:Banner ID="banner3" runat="server" Position="FP3" />--%>
-            <a class="info-box" href="#">
+            <%--<a class="info-box" href="#">
                 <span class="icon"><span class="fa fa-fw fa-cc-visa"></span></span>
                 <div class="description">
                     <span class="text"><strong>Online</strong> plaćanje karticama</span>
                     <span class="text second">saznajte više</span>
                 </div>
             </a>
-        </div>
-        <div class="col-md-3 padding-right-0 bannerFP4 padding-left-0">
+        </div>--%>
+        <%--<div class="col-md-3 padding-right-0 bannerFP4 padding-left-0">--%>
             <%--<YT:Banner ID="banner4" runat="server" Position="FP4" />--%>
-            <a class="info-box" href="#">
+            <%--<a class="info-box" href="#">
                 <span class="icon"><span class="fa fa-fw fa-facebook"></span></span>
                 <div class="description">
                     <span class="text">Posetite na na Facebook-u</span>
@@ -57,10 +57,15 @@
                 </div>
             </a>
         </div>
-    </div>
-    <div class="row">
+    </div>--%>
+    <%--<div class="row">
         <div class="col-lg-12 padding-left-0 padding-right-0 bannerFP5">
             <YT:Banner ID="banner5" runat="server" Position="FP5" />
+        </div>
+    </div>--%>
+    <div class="row">
+        <div class="col-md-12 padding-left-0 padding-right-0 bannerFP6">
+            <YT:Banner ID="banner6" runat="server" Position="FP6" />
         </div>
     </div>
     <div class="row product_slider margin-top-05">
@@ -75,6 +80,15 @@
                 <FooterTemplate>
                 </FooterTemplate>
             </asp:Repeater>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 padding-left-0 padding-right-0 bannerFP5">
+            <YT:Banner ID="banner5" runat="server" Position="FP5" />
+        </div>
+    </div>
+    <div class="row product_slider margin-top-05">
+        <div class="col-lg-12">
             <asp:Repeater ID="rptCategories" runat="server" OnItemDataBound="rptCategories_ItemDataBound">
                 <HeaderTemplate>
                 </HeaderTemplate>

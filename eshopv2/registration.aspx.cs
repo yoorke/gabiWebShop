@@ -53,7 +53,7 @@ namespace eshopv2
                     }
                 }
                 else
-                    CaptchaErrorLabel.Text = "ewrwer";
+                    CaptchaErrorLabel.Text = "Tekst sa slike nije validan. Pokušajte ponovo.";
             }
             catch (Exception ex)
             {

@@ -19,7 +19,7 @@
         <div class="row margin-top-2">
             <asp:Repeater ID="rptProducts" runat="server">
                 <ItemTemplate>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 padding-left-0 padding-right-0">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 padding-left-0 padding-right-0 margin-top-05 product-fp-col">
                         <ws2:ProductFP ID="productFP" runat="server" ProductItem='<%#Container.DataItem %>' />
                     </div>
                 </ItemTemplate>

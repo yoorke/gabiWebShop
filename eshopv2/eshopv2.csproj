@@ -1303,6 +1303,7 @@
     <Content Include="less\main_menu.less" />
     <Content Include="less\cart_fp.less" />
     <None Include="packages.config" />
+    <Content Include="Web1.config" />
     <None Include="webshopAdmin\dsPrint.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsPrint2.Designer.cs</LastGenOutput>

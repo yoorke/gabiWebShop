@@ -184,7 +184,7 @@ namespace eshopv2.user_controls
                 
                 }
 
-            //calculateTotal();
+            calculateTotal();
         }
 
         protected void dgvCart_RowDeleting(object sender, GridViewDeleteEventArgs e)

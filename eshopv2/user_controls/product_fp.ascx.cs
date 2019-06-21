@@ -72,18 +72,18 @@ namespace eshopv2.user_controls
             lblSaving.Text = string.Format("{0:N2}", _product.Price - double.Parse(lblWebPrice.Text));
             //lblDescription.Text = _product.Description;
             //lnkInfo.NavigateUrl = "/product.aspx?productUrl=" + _product.ProductID;
-            if (_product.Promotion != null)
+            if (_product.Promotion != null && _product.Promotion.Value > 0)
             {
                 imgPromotion.ImageUrl = "~/images/" + _product.Promotion.ImageUrl;
                 imgPromotion.Visible = (_product.Promotion.ImageUrl != string.Empty) ? true : false;
 
                 //price_div.Visible = true;
-                if(_product.Promotion.Value > 0)
-                { 
+                //if(_product.Promotion.Value > 0)
+                //{ 
                     price_div.Style.Add("display", "block");
                     saving_div.Visible = true;
                     
-                }
+                //}
                 lblWebPrice.Attributes["class"] = "web_price color-red";
             }
             else

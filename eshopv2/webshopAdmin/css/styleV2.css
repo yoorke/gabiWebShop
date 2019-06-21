@@ -275,6 +275,10 @@
     font-size:0.9em;
 }
 
+.table td span{
+    word-break: break-word;
+}
+
 .top{
     position:fixed;
     width:100%;
@@ -325,4 +329,8 @@
 
 .padding-bottom-05{
     padding-bottom:0.5em;
+}
+
+.page-header{
+    font-size:2.2em;
 }

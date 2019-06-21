@@ -6901,6 +6901,19 @@ a:hover {
   padding: 1em 2em;
   padding-bottom: 2em;
 }
+.footer-top .footer-right .social-icons {
+  font-size: 2em;
+}
+.footer-top .footer-right .social-icons a span {
+  color: #aaa;
+  transition: 0.2s ease all;
+}
+.footer-top .footer-right .social-icons a:hover {
+  text-decoration: none;
+}
+.footer-top .footer-right .social-icons a:hover span {
+  color: #fff;
+}
 @media only screen and (min-width: 768px) {
   .footer-top .footer-right {
     border-left: 2px solid #444;
@@ -7222,6 +7235,9 @@ body {
   right: 0;
   z-index: 999999;
 }
+.product_fp:hover .wrapper .buttons .btn_cart {
+  background-color: #4c9e15;
+}
 .product_slider h2 {
   font-size: 1.5em;
   margin: 0;
@@ -7239,6 +7255,9 @@ body {
 }
 .product_slider h2:hover {
   color: #eee;
+}
+.product_slider .product_slider_header {
+  margin-top: 2em;
 }
 @keyframes fadein {
   from {
@@ -7454,4 +7473,12 @@ body {
 }
 .info-box:hover .description {
   color: #444;
+}
+.form-info {
+  margin: 0 15px 1em 0;
+  padding: 0.2em;
+}
+.form-info-danger {
+  color: #d9534f;
+  border: 1px solid #f2dede;
 }

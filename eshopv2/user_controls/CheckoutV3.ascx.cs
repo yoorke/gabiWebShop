@@ -57,10 +57,10 @@ namespace eshopv2.user_controls
                     userID = int.Parse(Membership.GetUser().ProviderUserKey.ToString());
                 else userID = 42;
                 Order order = createOrder(userID);
-                
 
-                Common.SendOrderConfirmationMail(txtEmail.Text, txtFirstname.Text + " " + txtLastname.Text, order);
-                Common.SendNewOrderNotification(order.OrderID.ToString(), order);
+                Settings settings = new SettingsBL().GetSettings();
+                Common.SendOrderConfirmationMail(txtEmail.Text, txtFirstname.Text + " " + txtLastname.Text, order, settings);
+                Common.SendNewOrderNotification(order.OrderID.ToString(), order, settings);
                 new CartBL().ClearItems(Session["cartID"].ToString());
                 new CartBL().RemoveCoupon(Session["cartID"].ToString());
                 //Server.Transfer("/orderSuccessful.aspx");
@@ -203,8 +203,8 @@ namespace eshopv2.user_controls
             else lblCoupon.Text = string.Empty;
 
             lblCartValue.Text = string.Format("{0:N2}", cartTotal);
-            lblDeliveryPrice.Text = "Po cenovniku kurirske službe";
-            lblTotal.Text = string.Format("{0:N2}", total) + " + cena dostave";
+            lblDeliveryPrice.Text = discount > 5000 ? "0,00" : "Po cenovniku kurirske službe";
+            lblTotal.Text = string.Format("{0:N2}", total) + (discount > 5000 ? string.Empty : " + cena dostave");
             lblDiscount.Text = string.Format("{0:N2}", saving);
         }
 

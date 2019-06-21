@@ -181,6 +181,14 @@
                             <%--<p>Subota: 08:00 - 14:00</p>--%>
                             <p>Nedeljom ne radimo</p>
                         </div>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/gabidoozr" target="_blank">
+                                <span class="fa fa-fw fa-facebook-official"></span>
+                            </a>
+                            <a href="https://www.instagram.com/gabidoo023" target="_blank">
+                                <span class="fa fa-fw fa-instagram"></span>
+                            </a>
+                        </div>
                         <%--<a href="http://www.facebook.com" target="_blank"><img src="<%= ResolveUrl("~/images/Facebook_New_Logo_(2015).svg.png")  %>" class="img-responsive" /></a>--%>
                     </div><!--col-->
                 </div>

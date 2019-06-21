@@ -384,6 +384,17 @@ body{
     }
 }
 
+.product_fp:hover {
+    .wrapper {
+        .buttons {
+            .btn_cart {
+                //background-color: #444;
+                background-color:@cart-button;
+            }
+        }
+    }
+}
+
 .product_slider{
     h2{
         font-size:1.5em;
@@ -408,6 +419,10 @@ body{
 
     h2:hover{
         color:#eee;
+    }
+
+    .product_slider_header{
+        margin-top:2em;
     }
 }
 
@@ -680,4 +695,14 @@ body{
     .description{
         color:#444;
     }
+}
+
+.form-info {
+    margin: 0 15px 1em 0;
+    padding: 0.2em;
+}
+
+.form-info-danger{
+    color: @brand-danger;
+    border: 1px solid @state-danger-bg;
 }
