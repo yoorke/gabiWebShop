@@ -6902,11 +6902,17 @@ a:hover {
   padding-bottom: 2em;
 }
 .footer-top .footer-right .social-icons {
-  font-size: 2em;
+  font-size: 3em;
+  text-align: center;
 }
-.footer-top .footer-right .social-icons a span {
-  color: #aaa;
+.footer-top .footer-right .social-icons a span.fa {
   transition: 0.2s ease all;
+}
+.footer-top .footer-right .social-icons a span.fa-facebook-official:hover {
+  color: #3b5998;
+}
+.footer-top .footer-right .social-icons a span.fa-instagram:hover {
+  color: #ee2367;
 }
 .footer-top .footer-right .social-icons a:hover {
   text-decoration: none;
