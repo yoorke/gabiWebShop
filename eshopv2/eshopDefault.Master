@@ -55,7 +55,7 @@
             <div class="row">
                 <div class="col-md-3 logo">
                     <asp:HyperLink runat="server" NavigateUrl="~/">
-                        <img src="<%=ResolveUrl("~/images/logo.jpg") %>" class="img-responsive" />
+                        <img src="<%=ResolveUrl("~/images/logo-1.png") %>" class="img-responsive" />
                     </asp:HyperLink>
                 </div>
                 <div class="col-md-6">

@@ -22,7 +22,7 @@ namespace eshopv2
         {
             try
             {
-                Common.SendMessage(txtEmail.Text, txtSubject.Text, txtMessage.Text);
+                Common.SendMessage(txtEmail.Text, "Poruka sa sajta - " + ConfigurationManager.AppSettings["companyName"] + " - " + txtSubject.Text, "Poruka od: " + txtEmail.Text + "<br/><br/>" + txtMessage.Text);
                 lblStatus.Text = "Vaša poruka je uspešno poslata.";
             }
             catch
